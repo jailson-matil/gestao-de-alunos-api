@@ -6,12 +6,12 @@ export function novaDisciplina(nomeDisciplina = null) {
 
     return {
         nome: nomeDisciplina || faker.helpers.arrayElement([
-            'Algoritmos',
-            'Banco de Dados',
-            'Engenharia de Software',
-            'Estrutura de Dados',
-            'Programação Orientada a Objetos',
-            'Teste de Software'
+            'Pensamento Computacional',
+            'Algoritmos e Lógica de Programação',
+            'Programação para Automação de Testes',
+            'Integração Contínua para Automação de Testes',
+            'Princípios de Arquitetura de Software',
+            'Fundamentos e Padrões de Projeto de Automação de Testes',
         ]),
         codigo: `DIS-${timestamp}`,
         cargaHoraria: faker.number.int({
