@@ -1,7 +1,7 @@
 import request from 'supertest';
 import { expect } from 'chai';
 import mongoose from 'mongoose';
-import app from '../src/app.js';
+import app from '../../src/app.js';
 
 describe('POST /api/auth/login', () => {
   after(async () => {
@@ -25,4 +25,23 @@ describe('POST /api/auth/login', () => {
     expect(resposta.status).to.equal(401);
     expect(resposta.body.error).to.equal('E-mail ou senha inválidos.');
   });
+
+  it('deve retornar 400 quando não informar a senha', async () => {
+    const resposta = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'admin@escola.com', senha: '' });
+
+    expect(resposta.status).to.equal(400);
+    expect(resposta.body.error).to.equal('Os campos "email" e "senha" são obrigatórios.'); 
+  });
+
+   it('deve retornar 400 quando não informar o e-mail', async () => {
+    const resposta = await request(app)
+      .post('/api/auth/login')
+      .send({ email: '', senha: '12345' });
+
+    expect(resposta.status).to.equal(400);
+    expect(resposta.body.error).to.equal('Os campos "email" e "senha" são obrigatórios.'); 
+  });
+
 });

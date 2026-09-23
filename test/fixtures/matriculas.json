@@ -1,0 +1,33 @@
+[
+    {
+        "testTitle": "Validar que um aluna Vanda Gabriela Rezende que acaba de ser cadastrado pode ser matriculado em uma nova disciplina",        
+        "dadosAluno": {
+            "nome": "Vanda Gabriela Rezende",
+            "email": "vandagabrielarezende400@tigertimoveis.com",
+            "matricula": "2026-401",
+            "senha": "123456"
+        },
+        "dadosDisciplina": {
+            "nome": "Algoritmos e Estruturas de Dados",
+            "codigo": "ALG-401",
+            "cargaHoraria": 120
+        }, 
+        "statusCodeEsperado": 201            
+    },
+     {
+        "testTitle": "Validar que um aluna Maria Gabriela Rezende que acaba de ser cadastrado pode ser matriculado em uma nova disciplina",        
+        "dadosAluno": {
+            "nome": "Maria Gabriela Rezende",
+            "email": "mariagabrielarezende400@tigertimoveis.com",
+            "matricula": "2026-402",
+            "senha": "123456"
+        },
+        "dadosDisciplina": {
+            "nome": "Algoritmos e Estruturas de Dados",
+            "codigo": "ALG-402",
+            "cargaHoraria": 120
+        }, 
+        "statusCodeEsperado": 201            
+    }
+
+]
